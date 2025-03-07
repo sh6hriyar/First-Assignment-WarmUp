@@ -4,7 +4,19 @@ public class Exercises {
         complete this function to check if the input number is prime or not
      */
     public boolean isPrime(long n) {
-        // todo
+        if (n < 2)
+            return false;
+        long a = 2;
+        while (true)
+        {
+            if(n == a)
+                return true;
+            else if (n%a == 0)
+                return false;
+            a++;
+
+
+        }
         return false;
     }
 
