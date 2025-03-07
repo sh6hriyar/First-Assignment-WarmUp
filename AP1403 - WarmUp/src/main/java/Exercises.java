@@ -17,7 +17,6 @@ public class Exercises {
 
 
         }
-        return false;
     }
 
     /*
@@ -27,7 +26,19 @@ public class Exercises {
         if the input is not a fibonacci number with description above, return -1
      */
     public long fibonacciIndex(long n) {
-        // todo
+        int i = 1;
+        int a = 0;
+        int b = 1;
+        while (a <= n || b <= n)
+        {
+            if (n == a)
+                return i;
+            else if (n == b)
+                return i+1;
+            a = a + b;
+            b = b + a;
+            i++;
+        }
         return -1;
     }
 
@@ -50,8 +61,22 @@ public class Exercises {
         the output has to be a two-dimensional array of characters, so don't just print the triangle!
      */
     public char[][] generateTriangle(int n) {
-        // todo
-        return null;
+        char[][] triangle = new char[n][n];
+        for (int line = 0; line < n - 1; line++)
+        {
+            for (int chara = 0; chara <= line; chara++)
+            {
+                if (chara == 0 || chara == line)
+                    triangle[line][chara] = '*';
+                else
+                    triangle[line][chara] = ' ';
+            }
+        }
+        for (int c = 0; c < n; c++)
+        {
+            triangle[n - 1][c] = '*';
+        }
+        return triangle;
     }
 
     public static void main(String[] args) {
